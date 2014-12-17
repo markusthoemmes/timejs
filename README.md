@@ -6,7 +6,7 @@ A library to handle time without an attachement to a date.
 # Documentation
 
 ## Usage
-To use the library, create an object using `time()`. It returns an object containing the methods documented under Methods.
+To use the library, create an object using `time()`. It returns an object containing the methods documented under [Methods](#methods).
 
 ## Constructor
 
@@ -14,7 +14,7 @@ To use the library, create an object using `time()`. It returns an object contai
 A library to handle time without an attachement to a date.
 
 ###### Parameters
-1. **string** (string) string a string of the format hh:mm:ss
+1. **string** (string) a string of the format hh:mm:ss
 
 ###### Return
 (time) a time-object
@@ -30,6 +30,8 @@ getter and setter for the hours of the object
 ###### Return
 (number) if no parameter is set, the hours of the object are returned
 
+---
+
 ### minutes([paramMinutes])
 getter and setter for the minutes of the object
 
@@ -39,6 +41,8 @@ getter and setter for the minutes of the object
 ###### Return
 (number) if no parameter is set, the minutes of the object are returned
 
+---
+
 ### seconds([paramSeconds])
 getter and setter for the seconds of the object
 
@@ -47,6 +51,8 @@ getter and setter for the seconds of the object
 
 ###### Return
 (number) if no parameter is set, the seconds of the object are returned
+
+---
 
 ### add(value, unit)
 Adds a given value to the time represented by the object
@@ -58,6 +64,8 @@ Adds a given value to the time represented by the object
 ###### Return
 (number) if no parameter is set, the minutes of the object are returned
 
+---
+
 ### isGreaterThan(other)
 Returns wether this object is greater than another
 
@@ -66,6 +74,8 @@ Returns wether this object is greater than another
 
 ###### Return
 (boolean) `true` if the object is greater than the other object
+
+---
 
 ### isLessThan(other)
 Returns wether this object is less than another
@@ -76,6 +86,8 @@ Returns wether this object is less than another
 ###### Return
 (boolean) `true` if the object is less than the other object
 
+---
+
 ### isEqualTo(other)
 Returns wether this object is equal to another
 
@@ -84,6 +96,8 @@ Returns wether this object is equal to another
 
 ###### Return
 (boolean) `true` if the object is equal to the other object
+
+---
 
 ### toString()
 Returns a string of the format hh:mm:ss
