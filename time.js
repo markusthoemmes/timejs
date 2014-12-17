@@ -15,9 +15,17 @@ var time = function(string) {
     var matches = matcher.exec(string);
     if(matches !== null) {
       hours = parseInt(matches[1], 10);
+      if(hours >= 24) {
+        hours = 0;
+      }
+
       minutes = parseInt(matches[2], 10);
+      if(minutes >= 60) {
+        minutes = 0;
+      }
+
       seconds = parseInt(matches[3], 10);
-      if(isNaN(seconds)) {
+      if(isNaN(seconds) || seconds >= 60) {
         seconds = 0;
       }
     }
@@ -38,6 +46,9 @@ var time = function(string) {
         if(paramHours >= 0 && paramHours <= 23) {
           hours = paramHours;
         }
+        else {
+          hours = 0;
+        }
       }
     },
 
@@ -55,6 +66,9 @@ var time = function(string) {
         if(paramMinutes >= 0 && paramMinutes <= 59) {
           minutes = paramMinutes;
         }
+        else {
+          minutes = 0;
+        }
       }
     },
 
@@ -71,6 +85,9 @@ var time = function(string) {
       else {
         if(paramSeconds >= 0 && paramSeconds <= 59) {
           seconds = paramSeconds;
+        }
+        else {
+          seconds = 0;
         }
       }
     },
@@ -119,8 +136,7 @@ var time = function(string) {
      * @return {boolean} `true` if the object is after than the other object
      */
     isAfter: function(other) {
-      return 
-        (object.hours() > other.hours()) || 
+      return (object.hours() > other.hours()) || 
         (object.hours() === other.hours() && object.minutes() > other.minutes()) ||
         (object.hours() === other.hours() && object.minutes() === other.minutes() && object.seconds() > other.seconds());
     },
@@ -132,8 +148,7 @@ var time = function(string) {
      * @return {boolean} `true` if the object is before than the other object
      */
     isBefore: function(other) {
-      return 
-        (object.hours() < other.hours()) || 
+      return (object.hours() < other.hours()) || 
         (object.hours() === other.hours() && object.minutes() < other.minutes()) ||
         (object.hours() === other.hours() && object.minutes() === other.minutes() && object.seconds() < other.seconds());
     },
