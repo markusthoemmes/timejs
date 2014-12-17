@@ -1,0 +1,22 @@
+{
+  "name": "time.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/markusthoemmes/timejs",
+  "authors": [
+    "Markus Thömmes <markusthoemmes@me.com>"
+  ],
+  "description": "A library to handle time without an attachement to a date.",
+  "main": "time.js",
+  "keywords": [
+    "time",
+    "manipulation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
