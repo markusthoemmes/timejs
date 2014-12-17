@@ -14,10 +14,10 @@ To use the library, create an object using `time()`. It returns an object contai
 A library to handle time without an attachement to a date.
 
 ###### Parameters
-1. **string** (string) a string of the format hh:mm:ss
+1. **string** (*string*) a string of the format hh:mm:ss
 
 ###### Return
-(time) a time-object
+(*time*) a time-object
 
 ## Methods
 
@@ -25,10 +25,10 @@ A library to handle time without an attachement to a date.
 getter and setter for the hours of the object
 
 ###### Parameters
-1. **paramHours** (number) value of hours to set
+1. **paramHours** (*number*) value of hours to set
 
 ###### Return
-(number) if no parameter is set, the hours of the object are returned
+(*number*) if no parameter is set, the hours of the object are returned
 
 ---
 
@@ -36,10 +36,10 @@ getter and setter for the hours of the object
 getter and setter for the minutes of the object
 
 ###### Parameters
-1. **paramMinutes** (number) value of minutes to set
+1. **paramMinutes** (*number*) value of minutes to set
 
 ###### Return
-(number) if no parameter is set, the minutes of the object are returned
+(*number*) if no parameter is set, the minutes of the object are returned
 
 ---
 
@@ -47,10 +47,10 @@ getter and setter for the minutes of the object
 getter and setter for the seconds of the object
 
 ###### Parameters
-1. **paramSeconds** (number) value of seconds to set
+1. **paramSeconds** (*number*) value of seconds to set
 
 ###### Return
-(number) if no parameter is set, the seconds of the object are returned
+(*number*) if no parameter is set, the seconds of the object are returned
 
 ---
 
@@ -58,11 +58,11 @@ getter and setter for the seconds of the object
 Adds a given value to the time represented by the object
 
 ###### Parameters
-1. **value** (number) the value to add
-2. **unit** (string) the unit of the value
+1. **value** (*number*) the value to add
+2. **unit** (*string*) the unit of the value
 
 ###### Return
-(number) if no parameter is set, the minutes of the object are returned
+(*number*) if no parameter is set, the minutes of the object are returned
 
 ---
 
@@ -70,10 +70,10 @@ Adds a given value to the time represented by the object
 Returns wether this object is greater than another
 
 ###### Parameters
-1. **other** (time) a time-object to be compared with
+1. **other** (*time*) a time-object to be compared with
 
 ###### Return
-(boolean) `true` if the object is greater than the other object
+(*boolean*) `true` if the object is greater than the other object
 
 ---
 
@@ -81,10 +81,10 @@ Returns wether this object is greater than another
 Returns wether this object is less than another
 
 ###### Parameters
-1. **other** (time) a time-object to be compared with
+1. **other** (*time*) a time-object to be compared with
 
 ###### Return
-(boolean) `true` if the object is less than the other object
+(*boolean*) `true` if the object is less than the other object
 
 ---
 
@@ -92,10 +92,10 @@ Returns wether this object is less than another
 Returns wether this object is equal to another
 
 ###### Parameters
-1. **other** (time) a time-object to be compared with
+1. **other** (*time*) a time-object to be compared with
 
 ###### Return
-(boolean) `true` if the object is equal to the other object
+(*boolean*) `true` if the object is equal to the other object
 
 ---
 
@@ -106,4 +106,4 @@ Returns a string of the format hh:mm:ss
 none
 
 ###### Return
-(string) string of the format hh:mm:ss
+(*string*) string of the format hh:mm:ss
