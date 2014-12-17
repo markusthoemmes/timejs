@@ -113,12 +113,12 @@ var time = function(string) {
     },
 
     /**
-     * Returns wether this object is greater than another
+     * Returns wether this object is after another
      *
      * @param {time} a time-object to be compared with
-     * @return {boolean} `true` if the object is greater than the other object
+     * @return {boolean} `true` if the object is after than the other object
      */
-    isGreaterThan: function(other) {
+    isAfter: function(other) {
       return 
         (object.hours() > other.hours()) || 
         (object.hours() === other.hours() && object.minutes() > other.minutes()) ||
@@ -126,12 +126,12 @@ var time = function(string) {
     },
 
     /**
-     * Returns wether this object is less than another
+     * Returns wether this object's time is before than another
      *
      * @param {time} a time-object to be compared with
-     * @return {boolean} `true` if the object is less than the other object
+     * @return {boolean} `true` if the object is before than the other object
      */
-    isLessThan: function(other) {
+    isBefore: function(other) {
       return 
         (object.hours() < other.hours()) || 
         (object.hours() === other.hours() && object.minutes() < other.minutes()) ||
@@ -139,12 +139,12 @@ var time = function(string) {
     },
 
     /**
-     * Returns wether this object is equal to another
+     * Returns wether this object's time is equal to another
      *
      * @param {time} a time-object to be compared with
      * @return {boolean} `true` if the object is equal to the other object
      */
-    isEqualTo: function(other) {
+    isSame: function(other) {
       return (object.hours() === other.hours()) && (object.minutes() === other.minutes()) && (object.seconds() === other.seconds());
     },
     

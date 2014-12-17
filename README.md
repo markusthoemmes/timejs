@@ -66,30 +66,30 @@ Adds a given value to the time represented by the object
 
 ---
 
-### isGreaterThan(other)
-Returns wether this object is greater than another
+### isAfter(other)
+Returns wether this object is after another
 
 ###### Parameters
 1. **other** (*time*) a time-object to be compared with
 
 ###### Return
-(*boolean*) `true` if the object is greater than the other object
+(*boolean*) `true` if the object is after than the other object
 
 ---
 
-### isLessThan(other)
-Returns wether this object is less than another
+### isBefore(other)
+Returns wether this object's time is before than another
 
 ###### Parameters
 1. **other** (*time*) a time-object to be compared with
 
 ###### Return
-(*boolean*) `true` if the object is less than the other object
+(*boolean*) `true` if the object is before than the other object
 
 ---
 
-### isEqualTo(other)
-Returns wether this object is equal to another
+### isSame(other)
+Returns wether this object's time is equal to another
 
 ###### Parameters
 1. **other** (*time*) a time-object to be compared with
