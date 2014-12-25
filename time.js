@@ -110,7 +110,6 @@ var time = function(string) {
         var extraMinutes = (value%1)*60;
         hours = hours + Math.floor(value) % 24;
 
-        console.log(value, extraMinutes);
         object.add(extraMinutes, 'minutes');
 
         if(hours >= 24) {
