@@ -49,6 +49,7 @@ var time = function(string) {
         else {
           hours = 0;
         }
+        return object;
       }
     },
 
@@ -69,6 +70,7 @@ var time = function(string) {
         else {
           minutes = 0;
         }
+        return object;
       }
     },
 
@@ -89,6 +91,7 @@ var time = function(string) {
         else {
           seconds = 0;
         }
+        return object;
       }
     },
 
@@ -107,7 +110,7 @@ var time = function(string) {
       }
       else if(unit === 'minutes') {
         var newHours = Math.floor(value/60);
-        var remainingMinutes = value - (newHours * 60)
+        var remainingMinutes = value - (newHours * 60);
 
         object.add(newHours, 'hours');
         minutes += remainingMinutes;
@@ -118,7 +121,7 @@ var time = function(string) {
       }
       else if(unit === 'seconds') {
         var newMinutes = Math.floor(value/60);
-        var remainingSeconds = value - (newMinutes * 60)
+        var remainingSeconds = value - (newMinutes * 60);
 
         object.add(newMinutes, 'minutes');
         seconds += remainingSeconds;
@@ -127,6 +130,7 @@ var time = function(string) {
           object.add(1, 'minutes');
         }
       }
+      return object;
     },
 
     /**
