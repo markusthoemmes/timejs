@@ -106,14 +106,12 @@ var time = function(string) {
         return object;
       }
       if(unit === 'hours') {
-        hours = hours + value % 24;
-
         // floating point values (like 1.5hours)
-        var extraMinutes = (hours%1)*60;
-        object.add(extraMinutes, 'minutes');
+        var extraMinutes = (value%1)*60;
+        hours = hours + Math.floor(value) % 24;
 
-        // remove everything after the dot
-        hours = Math.floor(hours);
+        console.log(value, extraMinutes);
+        object.add(extraMinutes, 'minutes');
 
         if(hours >= 24) {
           hours -= 24;
@@ -121,12 +119,12 @@ var time = function(string) {
       }
       else if(unit === 'minutes') {
         var newHours = Math.floor(value/60);
-        var remainingMinutes = value - (newHours * 60);
-
         // floating point values (like 1.5 minutes)
         var extraSeconds = (remainingMinutes%1)*60;
-        object.add(extraSeconds, 'seconds');
+        
+        var remainingMinutes = Math.floor(value) - (newHours * 60);
 
+        object.add(extraSeconds, 'seconds');
         object.add(newHours, 'hours');
         minutes += remainingMinutes;
 
@@ -141,7 +139,7 @@ var time = function(string) {
         var newMinutes = Math.floor(value/60);
 
         // Math.floor to remove floating point values
-        var remainingSeconds = Math.floor(value - (newMinutes * 60));
+        var remainingSeconds = Math.floor(value) - (newMinutes * 60);
 
         object.add(newMinutes, 'minutes');
         seconds += remainingSeconds;
