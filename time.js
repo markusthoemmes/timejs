@@ -102,8 +102,19 @@ var time = function(string) {
      * @param {string} unit the unit of the value
      */
     add: function(value, unit) {
+      if(value === 0) {
+        return object;
+      }
       if(unit === 'hours') {
         hours = hours + value % 24;
+
+        // floating point values (like 1.5hours)
+        var extraMinutes = (hours%1)*60;
+        object.add(extraMinutes, 'minutes');
+
+        // remove everything after the dot
+        hours = Math.floor(hours);
+
         if(hours >= 24) {
           hours -= 24;
         }
@@ -112,8 +123,15 @@ var time = function(string) {
         var newHours = Math.floor(value/60);
         var remainingMinutes = value - (newHours * 60);
 
+        // floating point values (like 1.5 minutes)
+        var extraSeconds = (remainingMinutes%1)*60;
+        object.add(extraSeconds, 'seconds');
+
         object.add(newHours, 'hours');
         minutes += remainingMinutes;
+
+        // remove everything after the dot
+        minutes = Math.floor(minutes);
         if(minutes >= 60) {
           minutes -= 60;
           object.add(1, 'hours');
@@ -121,7 +139,9 @@ var time = function(string) {
       }
       else if(unit === 'seconds') {
         var newMinutes = Math.floor(value/60);
-        var remainingSeconds = value - (newMinutes * 60);
+
+        // Math.floor to remove floating point values
+        var remainingSeconds = Math.floor(value - (newMinutes * 60));
 
         object.add(newMinutes, 'minutes');
         seconds += remainingSeconds;

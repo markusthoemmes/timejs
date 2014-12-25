@@ -73,6 +73,12 @@ describe('The time.js library', function() {
     expect(test.hours()).toBe(1);
   	expect(test.minutes()).toBe(0);
     expect(test.seconds()).toBe(0);
+
+    test = time('06:00:00');
+    test.add(2.5, 'hours');
+    expect(test.hours()).toBe(8);
+    expect(test.minutes()).toBe(30);
+    expect(test.seconds()).toBe(0);
   });
 
   it('adds minutes correctly', function() {
@@ -87,6 +93,12 @@ describe('The time.js library', function() {
     expect(test.hours()).toBe(1);
   	expect(test.minutes()).toBe(1);
     expect(test.seconds()).toBe(0);
+
+    test = time();
+    test.add(1.5, 'minutes');
+    expect(test.hours()).toBe(0);
+    expect(test.minutes()).toBe(1);
+    expect(test.seconds()).toBe(30);
 
     test = time();
     test.add(60, 'minutes');
