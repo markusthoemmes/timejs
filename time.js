@@ -102,7 +102,7 @@ var time = function(string) {
      * @param {string} unit the unit of the value
      */
     add: function(value, unit) {
-      if(value === 0) {
+      if(value) {
         return object;
       }
       if(unit === 'hours') {
