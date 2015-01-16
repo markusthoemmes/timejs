@@ -109,8 +109,11 @@ var time = function(string) {
         // floating point values (like 1.5hours)
         var extraMinutes = (value%1)*60;
         hours = hours + Math.floor(value) % 24;
-
-        object.add(extraMinutes, 'minutes');
+        
+        // avoid too many calls of object.add() 
+        if(extraMinutes) { 
+          object.add(extraMinutes, 'minutes'); 
+        }
 
         if(hours >= 24) {
           hours -= 24;
@@ -122,9 +125,14 @@ var time = function(string) {
         var extraSeconds = (remainingMinutes%1)*60;
         
         var remainingMinutes = Math.floor(value) - (newHours * 60);
-
-        object.add(extraSeconds, 'seconds');
-        object.add(newHours, 'hours');
+        
+        // avoid too many calls of object.add() 
+        if(extraSeconds) {
+          object.add(extraSeconds, 'seconds');
+        }
+        if(newHours) {
+          object.add(newHours, 'hours');
+        }
         minutes += remainingMinutes;
 
         // remove everything after the dot
@@ -139,8 +147,11 @@ var time = function(string) {
 
         // Math.floor to remove floating point values
         var remainingSeconds = Math.floor(value) - (newMinutes * 60);
-
-        object.add(newMinutes, 'minutes');
+        
+        // avoid too many calls of object.add() 
+        if(newMinutes) {
+         object.add(newMinutes, 'minutes'); 
+        }
         seconds += remainingSeconds;
         if(seconds >= 60) {
           seconds -= 60;
