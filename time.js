@@ -102,7 +102,7 @@ var time = function(string) {
      * @param {string} unit the unit of the value
      */
     add: function(value, unit) {
-      if(value) {
+      if(!value) {
         return object;
       }
       if(unit === 'hours') {
@@ -119,7 +119,7 @@ var time = function(string) {
       else if(unit === 'minutes') {
         var newHours = Math.floor(value/60);
         // floating point values (like 1.5 minutes)
-        var extraSeconds = (remainingMinutes%1)*60;
+        var extraSeconds = (value%1)*60;
         
         var remainingMinutes = Math.floor(value) - (newHours * 60);
 
