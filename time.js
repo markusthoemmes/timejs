@@ -205,7 +205,7 @@ var time = function(string) {
         stringSeconds = '0'+seconds;
       }
 
-      return stringHours + ':' + stringMinutes + ':' + stringSeconds;
+      return stringHours + ':' + stringMinutes;
     }
   };
   return object;
