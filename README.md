@@ -1,8 +1,6 @@
 timejs
 ======
 
-HOANG WAS HERE!
-
 Trying something!
 
 A library to handle time without an attachement to a date.
